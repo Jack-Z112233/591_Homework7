@@ -17,15 +17,27 @@ public class RecursiveTesting {
     }
     @Test
     public void testCountSubstringsBaseCase(){
-        assertEquals(0, RecursivePractice.countSubStrings("a", "anana"));
+        assertEquals(0, RecursivePractice.countSubstrings("a", "anana"));
     }
     @Test
     public void testCountSubstringsRecursiveFound(){
-        assertEquals(2, RecursivePractice.countSubStrings("banana", "ana"));
+        assertEquals(2, RecursivePractice.countSubstrings("banana", "ana"));
     }
     @Test
     public void testCountSubstringsNoFind(){
-        assertEquals(0, RecursivePractice.countSubStrings("banana", "xyz"));
+        assertEquals(0, RecursivePractice.countSubstrings("banana", "xyz"));
+    }
+    @Test
+    public void testDigitMatchBaseCase(){
+        assertEquals(0,RecursivePractice.digitMatch(0,5783412));
+    }
+    @Test
+    public void testDigitMatchRecursive(){
+        assertEquals(3,RecursivePractice.digitMatch(120011225,21100125));
+    }
+    @Test
+    public void testDigitMatchNoMatches(){
+        assertEquals(0,RecursivePractice.digitMatch(999,222));
     }
 
 }
