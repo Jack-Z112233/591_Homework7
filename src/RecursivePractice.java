@@ -43,4 +43,27 @@ public class RecursivePractice {
         }
         return n *permutation(n-1, r-1);
     }
+    public static int findSecondLargest(int[] arr){
+      int largest = findMaxIndexHelper(arr, 0, 0);
+      return findLargestSkipLargestIndex(arr,0,largest);
+    }
+    private static int findMaxIndexHelper(int[] arr, int index, int largest){
+        if (index >= arr.length){
+            return largest;
+        }
+        if (arr[index] > arr[largest]){
+            return findMaxIndexHelper(arr, index + 1, index);
+        }
+        return findMaxIndexHelper(arr, index + 1, largest);
+    }
+    private static int findLargestSkipLargestIndex(int[] arr, int index, int skiplargest){
+        if(index >= arr.length){
+            return Integer.MIN_VALUE;
+        }
+        if(index == skiplargest){
+            return findLargestSkipLargestIndex(arr, index + 1, skiplargest);
+        }
+        int biggestInRest = findLargestSkipLargestIndex(arr, index + 1, skiplargest);
+        return Math.max(arr[index], biggestInRest);
+    }
 }

@@ -52,5 +52,20 @@ public class RecursiveTesting {
         assertThrows(IllegalArgumentException.class, () -> RecursivePractice.permutation(2,4));
         assertThrows(IllegalArgumentException.class, () -> RecursivePractice.permutation(-2,-1));
     }
+    @Test
+    public void testFindSecondLargestBaseCase(){
+        int []arr = {3,9};
+        assertEquals(3, RecursivePractice.findSecondLargest(arr));
+    }
+    @Test
+    public void testFindSecondLargestRecursiveWithTwoLargest(){
+        int []arr = {9,3,9};
+        assertEquals(9, RecursivePractice.findSecondLargest(arr));
+    }
+    @Test
+    public void testFindSecondLargestRecursiveNormalCase(){
+        int []arr = {1,3,5,7,9};
+        assertEquals(7, RecursivePractice.findSecondLargest(arr));
+    }
 
 }
