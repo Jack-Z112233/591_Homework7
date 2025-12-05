@@ -34,4 +34,13 @@ public class RecursivePractice {
             return digitMatch(x / 10, y / 10);
         }
     }
+    public static double permutation(int n, int r){
+        if(n < r || n < 0 || r < 0){
+            throw new IllegalArgumentException("n or r invalid, n needs to < r and both greater than 0");
+        }
+        if (r == 0){
+            return 1;
+        }
+        return n *permutation(n-1, r-1);
+    }
 }

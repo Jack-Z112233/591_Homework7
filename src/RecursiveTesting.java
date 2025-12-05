@@ -39,5 +39,18 @@ public class RecursiveTesting {
     public void testDigitMatchNoMatches(){
         assertEquals(0,RecursivePractice.digitMatch(999,222));
     }
+    @Test
+    public void testPermutationBaseCase(){
+        assertEquals(1.0,RecursivePractice.permutation(10,0));
+    }
+    @Test
+    public void testPermutationRecursive(){
+        assertEquals(840.0,RecursivePractice.permutation(7,4));
+    }
+    @Test
+    public void testPermutationException(){
+        assertThrows(IllegalArgumentException.class, () -> RecursivePractice.permutation(2,4));
+        assertThrows(IllegalArgumentException.class, () -> RecursivePractice.permutation(-2,-1));
+    }
 
 }
