@@ -15,5 +15,17 @@ public class RecursiveTesting {
         assertThrows(IllegalArgumentException.class, () -> RecursivePractice.multiplyOdds(0));
         assertThrows(IllegalArgumentException.class, () -> RecursivePractice.multiplyOdds(-1));
     }
+    @Test
+    public void testCountSubstringsBaseCase(){
+        assertEquals(0, RecursivePractice.countSubStrings("a", "anana"));
+    }
+    @Test
+    public void testCountSubstringsRecursiveFound(){
+        assertEquals(2, RecursivePractice.countSubStrings("banana", "ana"));
+    }
+    @Test
+    public void testCountSubstringsNoFind(){
+        assertEquals(0, RecursivePractice.countSubStrings("banana", "xyz"));
+    }
 
 }
