@@ -66,4 +66,16 @@ public class RecursivePractice {
         int biggestInRest = findLargestSkipLargestIndex(arr, index + 1, skiplargest);
         return Math.max(arr[index], biggestInRest);
     }
+    public static int waysToClimb(int n){
+        if (n <= 0){
+            throw new IllegalArgumentException("n should be greater than 0");
+        }
+        if (n == 1){ //base case
+            return 1;
+        }
+        if (n == 2){ //base case
+            return 2;
+        }
+        return waysToClimb(n - 1)+waysToClimb(n - 2); //recursive case
+    }
 }

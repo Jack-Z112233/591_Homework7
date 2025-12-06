@@ -67,5 +67,21 @@ public class RecursiveTesting {
         int []arr = {1,3,5,7,9};
         assertEquals(7, RecursivePractice.findSecondLargest(arr));
     }
+    @Test
+    public void testWaysToClimbBaseCaseEquals1(){
+        assertEquals(1, RecursivePractice.waysToClimb(1));
+    }
+    @Test
+    public void testWaysToClimbBaseCaseEquals2(){
+        assertEquals(2, RecursivePractice.waysToClimb(2));
+    }
+    @Test
+    public void testWaysToClimbBaseRecursive(){
+        assertEquals(34, RecursivePractice.waysToClimb(8));
+    }
+    @Test
+    public void testWaysToClimbException(){
+        assertThrows(IllegalArgumentException.class, () -> RecursivePractice.waysToClimb(0));
+    }
 
 }
